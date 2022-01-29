@@ -27,10 +27,13 @@ def create_tables():
 @app.route('/index')
 def index():
     print('HELLO!')
-    detailsUUID =  str(uuid.uuid4().fields[-1])[:10]
+    detailsUUID = str(uuid.uuid4().fields[-1])[:10]
     detailsUUID = str(detailsUUID)
     q = Details(id=detailsUUID, animal='cat')
     db.session.add(q)
     db.session.commit()
 
-    return "Nusaiba was here :)"
+    design = Details.query.get(id)
+    returnString = "Thanks for visiting. Your UUID is: " + design
+
+    return returnString
