@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime
 
 from app import app
 from flask_sqlalchemy import SQLAlchemy 
@@ -21,10 +21,8 @@ def create_tables():
 @app.route('/')
 @app.route('/index')
 def index():
-    db.create_all()
     print('HELLO!')
-
-    q = Details(id='1', animal='cat')
+    q = Details(id=str(datetime.utcnow), animal='cat')
     db.session.add(q)
     db.session.commit()
 
