@@ -15,8 +15,9 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
 db = SQLAlchemy(app)
 class Details(db.Model):
-    id: uuid.UUID = db.Column(postgresql.UUID(as_uuid=True), unique=True,
-                                       nullable=False, server_default=sqlalchemy.text('uuid_generate_v4()'))
+    # id: uuid.UUID = db.Column(postgresql.UUID(as_uuid=True), unique=True,
+    #                                    nullable=False, server_default=sqlalchemy.text('uuid_generate_v4()'))
+    id = db.Column(db.String, primary_key=True)
     animal = db.Column(db.String)
 
 def create_tables():
@@ -26,7 +27,7 @@ def create_tables():
 @app.route('/index')
 def index():
     print('HELLO!')
-    q = Details(id=uuid.uuid4(), animal='cat')
+    q = Details(id=str(uuid.uuid4()), animal='cat')
     db.session.add(q)
     db.session.commit()
 
