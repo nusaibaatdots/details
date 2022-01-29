@@ -31,4 +31,7 @@ def index():
     db.session.add(q)
     db.session.commit()
 
-    return "Nusaiba was here :)"
+    design = Details.query.get(id)
+    returnString = "Thanks for visiting. Your UUID is: " + design
+
+    return returnString
