@@ -12,8 +12,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
 db = SQLAlchemy(app)
 class Details(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    animal = db.Column(db.Text)
+    id = db.Column(db.String, primary_key=True)
+    animal = db.Column(db.String)
 
 def create_tables():
     db.create_all()
