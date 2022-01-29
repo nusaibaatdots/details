@@ -30,12 +30,13 @@ def index():
     detailsUUID = str(uuid.uuid4().fields[-1])[:10]
     detailsUUID = str(detailsUUID)
     q = Details(id=detailsUUID, animal='cat')
+
     db.session.add(q)
     db.session.commit()
 
     design = Details.query.get(id)
     print('HERE')
-    print(type(design))
-    returnString = "Thanks for visiting. Your UUID is: " + design
+    print(design['id'])
+    returnString = "Thanks for visiting. Your UUID is: " + detailsUUID
 
     return returnString
