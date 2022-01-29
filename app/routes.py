@@ -22,7 +22,7 @@ def create_tables():
 @app.route('/index')
 def index():
     print('HELLO!')
-    q = Details(id=str(datetime.utcnow), animal='cat')
+    q = Details(id=str(datetime.utcnow()), animal='cat')
     db.session.add(q)
     db.session.commit()
 
