@@ -34,6 +34,8 @@ def index():
     db.session.commit()
 
     design = Details.query.get(id)
+    print('HERE')
+    print(type(design))
     returnString = "Thanks for visiting. Your UUID is: " + design
 
     return returnString
