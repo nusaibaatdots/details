@@ -11,12 +11,17 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://lvopweizdnegil:b14d73a558c
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
 db = SQLAlchemy(app)
+class Details(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    animal = db.Column(db.Text)
 
 @app.route('/')
 @app.route('/index')
 def index():
     print('HELLO!')
-    db.session.add('cat')
+
+    q = Details(id='1', animal='cat')
+    db.session.add(q)
     db.session.commit()
 
     return "Nusaiba was here :)"
