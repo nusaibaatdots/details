@@ -18,6 +18,7 @@ class Details(db.Model):
 @app.route('/')
 @app.route('/index')
 def index():
+    db.create_all()
     print('HELLO!')
 
     q = Details(id='1', animal='cat')
