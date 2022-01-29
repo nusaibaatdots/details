@@ -30,7 +30,8 @@ def index():
     x =  uuid.uuid4().hex
     print(x)
     print(type(x))
-    q = Details(id=x[:10], animal='cat')
+    x = str(x[:10])
+    q = Details(id=x, animal='cat')
     db.session.add(q)
     db.session.commit()
 
