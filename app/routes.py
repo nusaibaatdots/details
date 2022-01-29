@@ -16,7 +16,7 @@ db = SQLAlchemy(app)
 @app.route('/index')
 def index():
     print('HELLO!')
-    db.session.add(datetime.datetime.now().time())
+    db.session.add('cat')
     db.session.commit()
 
     return "Nusaiba was here :)"
