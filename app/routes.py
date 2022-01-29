@@ -42,7 +42,7 @@ def index():
         returnString = "You're in, " + str(nameInput) + "." + "Your UUID is: " + detailsUUID
 
         return returnString
-    return 'Not the right passcode'
+    return 'Thats not right, ' + nameInput + ' :('
 
     # if request.method == 'GET':
     #     return 'hi!'
