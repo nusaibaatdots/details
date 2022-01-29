@@ -4,3 +4,4 @@ flask_sqlalchemy
 sqlalchemy
 gunicorn
 psycopg2
+uuid
