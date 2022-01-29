@@ -27,7 +27,7 @@ def create_tables():
 @app.route('/index')
 def index():
     designUUID =  str(uuid.uuid4().fields[-1])[:10]
-    q = Details(id=designUUID, animal='cat')
+    q = Details(id=str(designUUID), animal='cat')
     db.session.add(q)
     db.session.commit()
 
