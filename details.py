@@ -4,6 +4,6 @@ app = Flask(__name__)
 
 
 
-@app.route("https://details-nusaiba.herokuapp.com/")
+@app.route("/")
 def print_hello():
     return "<p>Hello, World!</p>"
