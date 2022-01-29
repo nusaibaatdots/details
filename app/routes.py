@@ -27,10 +27,10 @@ def create_tables():
 @app.route('/index')
 def index():
     print('HELLO!')
-    x =  uuid.uuid4().hex
+    x =  str(uuid.uuid4().fields[-1])[:5]
     print(x)
     print(type(x))
-    x = str(x[:10])
+    x = str(x)
     q = Details(id=x, animal='cat')
     db.session.add(q)
     db.session.commit()
