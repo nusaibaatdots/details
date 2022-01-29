@@ -29,7 +29,8 @@ def index():
     print('HELLO!')
     x =  uuid.uuid4().hex
     print(x)
-    q = Details(id=str(86), animal='cat')
+    print(type(x))
+    q = Details(id=str(87), animal='cat')
     db.session.add(q)
     db.session.commit()
 
