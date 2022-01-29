@@ -15,6 +15,9 @@ class Details(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     animal = db.Column(db.Text)
 
+def create_tables():
+    db.create_all()
+
 @app.route('/')
 @app.route('/index')
 def index():
